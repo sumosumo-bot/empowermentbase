@@ -32,6 +32,7 @@
 
     <!-- ファーストビュー -->
     <section class="hero" aria-label="ファーストビュー">
+      <div class="hero-deco" aria-hidden="true"></div>
       <div class="container hero-inner">
         <div class="hero-content">
           <h1 class="hero-title">
@@ -43,22 +44,57 @@
             社内研修・業務改善・生成AI活用支援を通じて、<br>
             企業の現場力向上と人材育成を支援します。
           </p>
-          <a
-            href="https://forms.gle/Y9h7fB74kUVfMeJ98"
-            target="_blank"
-            rel="noopener"
-            class="btn btn-primary"
-          >研修・業務改善の相談をする</a>
+          <a href="https://forms.gle/Y9h7fB74kUVfMeJ98" target="_blank" rel="noopener" class="btn btn-primary">
+            研修・業務改善の相談をする
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <div class="hero-keywords" aria-label="主なキーワード">
+            <span class="keyword-tag">人材育成</span>
+            <span class="keyword-tag">業務改善</span>
+            <span class="keyword-tag">生成AI活用</span>
+            <span class="keyword-tag">5S／2S</span>
+            <span class="keyword-tag">社内研修</span>
+          </div>
         </div>
-        <div class="hero-keywords" aria-label="主なキーワード">
-          <span class="keyword-tag">人材育成</span>
-          <span class="keyword-tag">業務改善</span>
-          <span class="keyword-tag">生成AI活用</span>
-          <span class="keyword-tag">5S／2S</span>
-          <span class="keyword-tag">社内研修</span>
+        <!-- SVGイラスト：グロースチャート -->
+        <div class="hero-visual" aria-hidden="true">
+          <svg viewBox="0 0 340 270" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <circle cx="290" cy="55" r="165" stroke="rgba(255,255,255,0.035)" stroke-width="1"/>
+            <circle cx="290" cy="55" r="115" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+            <circle cx="290" cy="55" r="68" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <line x1="28" y1="228" x2="326" y2="228" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+            <line x1="28" y1="228" x2="28" y2="22" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+            <line x1="28" y1="178" x2="326" y2="178" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="5,7"/>
+            <line x1="28" y1="128" x2="326" y2="128" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="5,7"/>
+            <line x1="28" y1="78" x2="326" y2="78" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="5,7"/>
+            <rect x="48"  y="193" width="32" height="35"  rx="3" fill="rgba(255,255,255,0.07)"/>
+            <rect x="103" y="162" width="32" height="66"  rx="3" fill="rgba(255,255,255,0.09)"/>
+            <rect x="158" y="125" width="32" height="103" rx="3" fill="rgba(255,255,255,0.11)"/>
+            <rect x="213" y="88"  width="32" height="140" rx="3" fill="rgba(255,255,255,0.13)"/>
+            <rect x="268" y="48"  width="32" height="180" rx="3" fill="rgba(46,125,82,0.45)"/>
+            <polyline points="64,184 119,153 174,116 229,79 284,40" stroke="rgba(255,255,255,0.75)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="64"  cy="184" r="4"  fill="rgba(255,255,255,0.45)"/>
+            <circle cx="119" cy="153" r="4"  fill="rgba(255,255,255,0.52)"/>
+            <circle cx="174" cy="116" r="5"  fill="rgba(255,255,255,0.6)"/>
+            <circle cx="229" cy="79"  r="5"  fill="rgba(255,255,255,0.68)"/>
+            <circle cx="284" cy="40"  r="20" fill="rgba(46,125,82,0.12)"/>
+            <circle cx="284" cy="40"  r="12" fill="rgba(46,125,82,0.28)"/>
+            <circle cx="284" cy="40"  r="6"  fill="rgba(46,125,82,0.92)"/>
+            <path d="M278 23 L284 10 L290 23" stroke="rgba(46,125,82,0.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="284" y1="10" x2="284" y2="32" stroke="rgba(46,125,82,0.65)" stroke-width="2" stroke-linecap="round"/>
+            <text x="292" y="46" font-size="9" fill="rgba(46,125,82,0.9)" font-family="sans-serif" font-weight="bold">目標</text>
+            <text x="34"  y="243" font-size="9" fill="rgba(255,255,255,0.35)" font-family="sans-serif">現在</text>
+          </svg>
         </div>
       </div>
     </section>
+
+    <!-- セクション区切り波形 -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 54" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,0 C240,54 480,54 720,27 C960,0 1200,0 1440,54 L1440,54 L0,54 Z" fill="#f4f7fb"/>
+      </svg>
+    </div>
 
     <!-- 課題提起 -->
     <section id="issues" class="section section-issues">
@@ -70,12 +106,42 @@
           十分な成果につながらないケースも少なくありません。
         </p>
         <ul class="issues-list">
-          <li>研修を実施しても、現場での行動変化につながらない</li>
-          <li>管理職や現場リーダーの育成が進んでいない</li>
-          <li>業務が属人化し、特定の人に負担が集中している</li>
-          <li>整理整頓や標準化が定着しない</li>
-          <li>改善活動が一時的な取り組みで終わってしまう</li>
-          <li>生成AIやデジタルツールを業務に活かしきれていない</li>
+          <li>
+            <span class="issues-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </span>
+            研修を実施しても、現場での行動変化につながらない
+          </li>
+          <li>
+            <span class="issues-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </span>
+            管理職や現場リーダーの育成が進んでいない
+          </li>
+          <li>
+            <span class="issues-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </span>
+            業務が属人化し、特定の人に負担が集中している
+          </li>
+          <li>
+            <span class="issues-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </span>
+            整理整頓や標準化が定着しない
+          </li>
+          <li>
+            <span class="issues-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </span>
+            改善活動が一時的な取り組みで終わってしまう
+          </li>
+          <li>
+            <span class="issues-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </span>
+            生成AIやデジタルツールを業務に活かしきれていない
+          </li>
         </ul>
       </div>
     </section>
@@ -103,7 +169,15 @@
         <div class="cards-grid cards-3">
 
           <article class="service-card">
-            <div class="service-card-num">01</div>
+            <div class="service-icon" aria-hidden="true">
+              <!-- users icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
             <h3 class="service-card-title">人材育成研修</h3>
             <p class="service-card-body">管理職・リーダー・若手社員など、階層や役割に応じた研修を設計・実施します。知識の習得だけでなく、現場での行動変化につながる内容を重視します。</p>
             <ul class="service-card-list">
@@ -117,7 +191,13 @@
           </article>
 
           <article class="service-card">
-            <div class="service-card-num">02</div>
+            <div class="service-icon" aria-hidden="true">
+              <!-- trending-up icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+            </div>
             <h3 class="service-card-title">業務改善支援</h3>
             <p class="service-card-body">業務の見える化、整理整頓、標準化を通じて、現場のムダや属人化を減らします。5S・2Sの考え方を活用し、改善が続く仕組みづくりを支援します。</p>
             <ul class="service-card-list">
@@ -131,7 +211,21 @@
           </article>
 
           <article class="service-card">
-            <div class="service-card-num">03</div>
+            <div class="service-icon" aria-hidden="true">
+              <!-- cpu icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                <rect x="9" y="9" width="6" height="6"/>
+                <line x1="9"  y1="1"  x2="9"  y2="4"/>
+                <line x1="15" y1="1"  x2="15" y2="4"/>
+                <line x1="9"  y1="20" x2="9"  y2="23"/>
+                <line x1="15" y1="20" x2="15" y2="23"/>
+                <line x1="20" y1="9"  x2="23" y2="9"/>
+                <line x1="20" y1="14" x2="23" y2="14"/>
+                <line x1="1"  y1="9"  x2="4"  y2="9"/>
+                <line x1="1"  y1="14" x2="4"  y2="14"/>
+              </svg>
+            </div>
             <h3 class="service-card-title">生成AI活用支援</h3>
             <p class="service-card-body">ChatGPTやMicrosoft Copilotなどの生成AIを、日々の業務改善に活かすための研修・導入支援を行います。単なるツール紹介ではなく、実務で使える活用を重視します。</p>
             <ul class="service-card-list">
@@ -159,24 +253,53 @@
         <div class="cards-grid cards-4">
 
           <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <!-- target icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+            </div>
             <div class="feature-num">01</div>
             <h3 class="feature-title">現場課題に合わせて設計</h3>
             <p class="feature-body">一般的な研修パッケージではなく、企業の課題・業務内容・受講者層に合わせて内容を調整します。</p>
           </article>
 
           <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <!-- zap icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+            </div>
             <div class="feature-num">02</div>
             <h3 class="feature-title">行動変化を重視</h3>
             <p class="feature-body">「知っている」で終わらせず、受講後に現場で何を実践するかまで具体化します。</p>
           </article>
 
           <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <!-- link icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+              </svg>
+            </div>
             <div class="feature-num">03</div>
             <h3 class="feature-title">研修と業務改善を接続</h3>
             <p class="feature-body">研修で学んだ内容を、業務改善・標準化・仕組み化につなげます。</p>
           </article>
 
           <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <!-- layers icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                <polyline points="2 17 12 22 22 17"/>
+                <polyline points="2 12 12 17 22 12"/>
+              </svg>
+            </div>
             <div class="feature-num">04</div>
             <h3 class="feature-title">デジタル・生成AIも活用</h3>
             <p class="feature-body">必要に応じて生成AIやデジタルツールを活用し、業務効率化と改善活動を支援します。</p>
@@ -216,8 +339,11 @@
         <h2 class="section-title">代表プロフィール</h2>
         <div class="profile-card">
           <div class="profile-header">
-            <p class="profile-name">数本 優<span class="profile-kana">（すもと ゆう）</span></p>
-            <p class="profile-role">合同会社エンパワーメントベース 代表<br>中小企業診断士 ／ 経営コンサルタント ／ 研修講師</p>
+            <div class="profile-avatar" aria-hidden="true">優</div>
+            <div class="profile-header-text">
+              <p class="profile-name">数本 優<span class="profile-kana">（すもと ゆう）</span></p>
+              <p class="profile-role">合同会社エンパワーメントベース 代表<br>中小企業診断士 ／ 経営コンサルタント ／ 研修講師</p>
+            </div>
           </div>
           <div class="profile-body">
             <p>中小企業の人材育成、業務改善、生成AI活用を中心に、現場に寄り添った研修・コンサルティングを行う。</p>
@@ -280,12 +406,10 @@
           企業の課題に応じて内容を設計します。
         </p>
         <p class="contact-body">まずは現在のお困りごとや実施したい内容をお聞かせください。</p>
-        <a
-          href="https://forms.gle/Y9h7fB74kUVfMeJ98"
-          target="_blank"
-          rel="noopener"
-          class="btn btn-contact"
-        >お問い合わせフォームへ</a>
+        <a href="https://forms.gle/Y9h7fB74kUVfMeJ98" target="_blank" rel="noopener" class="btn btn-contact">
+          お問い合わせフォームへ
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
     </section>
 
