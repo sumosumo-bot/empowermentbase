@@ -1,0 +1,784 @@
+/* ================================================================
+   合同会社エンパワーメントベース 公式サイト
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   リセット・ベース
+   ---------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans JP', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text);
+  background: var(--white);
+  -webkit-text-size-adjust: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ----------------------------------------------------------------
+   カスタムプロパティ（カラー・サイズ）
+   ---------------------------------------------------------------- */
+:root {
+  /* メインカラー：ネイビー系 */
+  --navy:       #1a3260;
+  --navy-dark:  #0f1f3d;
+  --navy-mid:   #243e78;
+
+  /* アクセントカラー：グリーン系 */
+  --green:      #2e7d52;
+  --green-hover: #388e60;
+
+  /* 背景・ボーダー */
+  --bg-light:   #f4f7fb;
+  --bg-white:   #ffffff;
+  --border:     #dce3ef;
+
+  /* テキスト */
+  --text:       #2c2c2c;
+  --text-sub:   #555;
+  --text-muted: #888;
+  --white:      #ffffff;
+
+  /* レイアウト */
+  --max-width:  1100px;
+  --header-h:   64px;
+}
+
+/* ----------------------------------------------------------------
+   共通レイアウト
+   ---------------------------------------------------------------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.section {
+  padding: 88px 0;
+}
+
+/* アンカーリンクでヘッダー分ずらす */
+[id] {
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}
+
+/* ----------------------------------------------------------------
+   見出し・リード文（セクション共通）
+   ---------------------------------------------------------------- */
+.section-title {
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: var(--navy);
+  text-align: center;
+  line-height: 1.45;
+  margin-bottom: 1.25rem;
+}
+
+.section-lead {
+  text-align: center;
+  color: var(--text-sub);
+  line-height: 1.95;
+  margin-bottom: 3rem;
+}
+
+/* PCのみ改行を有効にする補助クラス */
+.br-pc { display: none; }
+@media (min-width: 769px) {
+  .br-pc { display: inline; }
+}
+
+/* ----------------------------------------------------------------
+   ボタン
+   ---------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* グリーン：メインCTA */
+.btn-primary {
+  background: var(--green);
+  color: var(--white);
+  border: 2px solid var(--green);
+}
+.btn-primary:hover {
+  background: var(--green-hover);
+  border-color: var(--green-hover);
+}
+
+/* ホワイト：コンタクトセクション用 */
+.btn-contact {
+  background: var(--white);
+  color: var(--navy);
+  border: 2px solid var(--white);
+  font-size: 1.05rem;
+  padding: 16px 52px;
+}
+.btn-contact:hover {
+  background: var(--bg-light);
+  border-color: var(--bg-light);
+}
+
+/* ================================================================
+   ヘッダー
+   ================================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--navy);
+  height: var(--header-h);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: 16px;
+}
+
+.site-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--white);
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.site-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.site-nav a {
+  display: block;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.82);
+  padding: 6px 11px;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+.site-nav a:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* お問い合わせボタン（ナビ内） */
+.site-nav .nav-cta {
+  background: var(--green);
+  color: var(--white);
+  padding: 7px 16px;
+  margin-left: 4px;
+}
+.site-nav .nav-cta:hover {
+  background: var(--green-hover);
+}
+
+/* ================================================================
+   ファーストビュー（ヒーロー）
+   ================================================================ */
+.hero {
+  background: linear-gradient(150deg, var(--navy-dark) 0%, var(--navy) 100%);
+  color: var(--white);
+  padding: 96px 0 80px;
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.hero-title {
+  font-size: clamp(1.65rem, 4.5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.025em;
+  margin-bottom: 1.4rem;
+}
+
+.hero-sub {
+  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 2;
+  margin-bottom: 2.25rem;
+}
+
+.hero-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.keyword-tag {
+  display: inline-block;
+  padding: 6px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 20px;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.06);
+  letter-spacing: 0.03em;
+}
+
+/* ================================================================
+   課題提起
+   ================================================================ */
+.section-issues {
+  background: var(--bg-light);
+}
+
+.issues-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+.issues-list li {
+  background: var(--bg-white);
+  border-left: 4px solid var(--navy);
+  padding: 14px 20px;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.94rem;
+  color: var(--text);
+  line-height: 1.65;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* ================================================================
+   提供価値
+   ================================================================ */
+.section-value {
+  background: var(--bg-white);
+}
+
+.value-body {
+  max-width: 740px;
+  margin: 0 auto;
+  background: var(--bg-light);
+  border-left: 5px solid var(--navy);
+  padding: 36px 40px;
+  border-radius: 0 8px 8px 0;
+}
+
+.value-body p {
+  color: var(--text);
+  line-height: 1.95;
+  margin-bottom: 1.15rem;
+}
+.value-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ================================================================
+   主な支援内容
+   ================================================================ */
+.section-services {
+  background: var(--bg-light);
+}
+
+/* カードグリッド共通 */
+.cards-grid {
+  display: grid;
+  gap: 24px;
+}
+.cards-3 { grid-template-columns: repeat(3, 1fr); }
+.cards-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* サービスカード */
+.service-card {
+  background: var(--bg-white);
+  border-radius: 8px;
+  padding: 32px 28px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+  border-top: 4px solid var(--navy);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card-num {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+  opacity: 0.18;
+  line-height: 1;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.service-card-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.service-card-body {
+  font-size: 0.88rem;
+  color: var(--text-sub);
+  line-height: 1.85;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.service-card-list {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+.service-card-list li {
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.5;
+  padding: 5px 0 5px 18px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.service-card-list li:last-child {
+  border-bottom: none;
+}
+.service-card-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 2px;
+  color: var(--green);
+  font-size: 0.78rem;
+  top: 6px;
+}
+
+/* ================================================================
+   支援の特徴
+   ================================================================ */
+.section-features {
+  background: var(--bg-white);
+}
+
+.feature-card {
+  background: var(--bg-light);
+  border-radius: 8px;
+  padding: 28px 24px;
+  border-bottom: 3px solid var(--green);
+}
+
+.feature-num {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy-mid);
+  opacity: 0.15;
+  line-height: 1;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.feature-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+  line-height: 1.45;
+}
+
+.feature-body {
+  font-size: 0.88rem;
+  color: var(--text-sub);
+  line-height: 1.85;
+}
+
+/* ================================================================
+   主な実績
+   ================================================================ */
+.section-works {
+  background: var(--bg-light);
+}
+
+.works-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.works-list li {
+  background: var(--bg-white);
+  border-radius: 4px;
+  padding: 13px 16px 13px 36px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  position: relative;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+.works-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 12px;
+  top: 13px;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.works-note {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ================================================================
+   代表プロフィール
+   ================================================================ */
+.section-profile {
+  background: var(--bg-white);
+}
+
+.profile-card {
+  max-width: 720px;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.profile-header {
+  background: var(--navy);
+  color: var(--white);
+  padding: 32px 40px;
+}
+
+.profile-name {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.profile-kana {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 8px;
+}
+
+.profile-role {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.75;
+}
+
+.profile-body {
+  padding: 32px 40px;
+  background: var(--bg-light);
+}
+
+.profile-body p {
+  color: var(--text);
+  line-height: 1.95;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+.profile-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ================================================================
+   会社概要
+   ================================================================ */
+.section-company {
+  background: var(--bg-light);
+}
+
+.company-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.company-table th,
+.company-table td {
+  padding: 18px 28px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.93rem;
+  line-height: 1.65;
+  text-align: left;
+  vertical-align: top;
+}
+
+.company-table tr:last-child th,
+.company-table tr:last-child td {
+  border-bottom: none;
+}
+
+.company-table th {
+  width: 180px;
+  font-weight: 700;
+  color: var(--navy);
+  background: #eaeff8;
+  white-space: nowrap;
+}
+
+.company-table td a {
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.company-table td a:hover {
+  color: var(--green);
+}
+
+/* ================================================================
+   お問い合わせ
+   ================================================================ */
+.section-contact {
+  background: var(--navy);
+  padding: 96px 0;
+}
+
+.contact-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+}
+
+.contact-title {
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.contact-body {
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.95;
+  margin-bottom: 0.5rem;
+}
+
+.contact-inner .btn-contact {
+  margin-top: 2.25rem;
+}
+
+/* ================================================================
+   フッター
+   ================================================================ */
+.site-footer {
+  background: var(--navy-dark);
+  padding: 36px 28px;
+  text-align: center;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-tagline {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 6px;
+  letter-spacing: 0.04em;
+}
+
+/* ================================================================
+   レスポンシブ：タブレット（～1023px）
+   ================================================================ */
+@media (max-width: 1023px) {
+  .cards-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .cards-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================================================
+   レスポンシブ：スマートフォン（～767px）
+   ================================================================ */
+@media (max-width: 767px) {
+  :root {
+    --header-h: auto;
+  }
+
+  /* ヘッダー */
+  .site-header {
+    height: auto;
+    position: sticky;
+    top: 0;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 16px;
+    gap: 6px;
+    height: auto;
+  }
+
+  .site-title {
+    font-size: 0.82rem;
+  }
+
+  .site-nav {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .site-nav::-webkit-scrollbar { display: none; }
+
+  .site-nav ul {
+    flex-wrap: nowrap;
+    gap: 2px;
+    width: max-content;
+    padding-bottom: 2px;
+  }
+
+  .site-nav a {
+    font-size: 0.76rem;
+    padding: 5px 9px;
+  }
+
+  .site-nav .nav-cta {
+    padding: 5px 12px;
+  }
+
+  /* ヒーロー */
+  .hero {
+    padding: 60px 0 52px;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-sub {
+    font-size: 0.9rem;
+    margin-bottom: 1.75rem;
+  }
+
+  /* セクション */
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-lead {
+    margin-bottom: 2rem;
+  }
+
+  /* 提供価値 */
+  .value-body {
+    padding: 24px 22px;
+  }
+
+  /* カード */
+  .cards-4 {
+    grid-template-columns: 1fr;
+  }
+
+  /* プロフィール */
+  .profile-header {
+    padding: 24px 22px;
+  }
+
+  .profile-body {
+    padding: 24px 22px;
+  }
+
+  .profile-name {
+    font-size: 1.2rem;
+  }
+
+  /* 会社概要テーブル */
+  .company-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .company-table th {
+    width: 110px;
+    font-size: 0.85rem;
+    padding: 14px 16px;
+    white-space: nowrap;
+  }
+
+  .company-table td {
+    font-size: 0.88rem;
+    padding: 14px 16px;
+  }
+
+  /* お問い合わせ */
+  .section-contact {
+    padding: 64px 0;
+  }
+
+  .btn-contact {
+    font-size: 0.95rem;
+    padding: 14px 32px;
+  }
+
+  /* 実績リスト */
+  .works-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* 課題リスト */
+  .issues-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================================================
+   レスポンシブ：小型スマートフォン（～374px）
+   ================================================================ */
+@media (max-width: 374px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .btn-primary {
+    padding: 13px 24px;
+    font-size: 0.9rem;
+  }
+
+  .hero-title {
+    font-size: 1.35rem;
+  }
+}
